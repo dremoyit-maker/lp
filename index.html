@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Fully Charged Separator KH-51(AI) | Premium Device Protection</title>
+    <meta name="description"
+        content="The ultimate AI-powered auto-stop charging adapter. Protect your smartphone battery, prevent overheating, and sleep with peace of mind.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Fully Charged Separator KH-51(AI)">
+    <meta property="og:description"
+        content="Stop battery degradation. The smart adapter that physically disconnects power at 100%.">
+    <meta property="og:type" content="product">
+    <meta property="og:image" content="./assets/images/og-image.jpg">
+    <!-- Fonts: Inter & Anek Bangla for a clean, premium bilingual layout -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="./images/Favicon.png">
+
+    <!-- Tailwind CSS (CDN for Static Implementation) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Anek Bangla', 'sans-serif'],
+                    },
+                    colors: {
+                        base: '#0F172A',      /* Dark Navy background */
+                        surface: '#1E293B',   /* Slightly lighter for cards */
+                        primary: '#2563EB',   /* Blue */
+                        accent: '#06B6D4',    /* Cyan */
+                        cta: '#F97316',       /* Orange CTA */
+                        textMain: '#FFFFFF',  /* White text */
+                        textMuted: '#94A3B8', /* Muted text */
+                    },
+                    boxShadow: {
+                        'premium': '0 20px 40px -15px rgba(0,0,0,0.5)',
+                        'glow': '0 0 40px -10px rgba(37, 99, 235, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Premium Styles -->
+    <style>
+        body {
+            background-color: #0F172A;
+            color: #FFFFFF;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism effects */
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Typography Gradients */
+        .text-gradient {
+            background: linear-gradient(135deg, #FFFFFF 0%, #94A3B8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-blue {
+            background: linear-gradient(135deg, #2563EB 0%, #06B6D4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Smooth Reveal Animations Setup */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        /* Custom subtle pulse for CTA */
+        @keyframes subtle-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(249, 115, 22, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
+            }
+        }
+
+        .btn-pulse {
+            animation: subtle-pulse 2s infinite;
+        }
+
+        /* Hide scrollbar but keep functionality */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0F172A;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        /* Accordion transitions */
+        .accordion-content {
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        /* Mobile sticky CTA */
+        .mobile-cta-bar {
+            transform: translateY(100%);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .mobile-cta-bar.visible {
+            transform: translateY(0);
+        }
+
+        /* Form inputs */
+        .form-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #2563EB;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        .form-input.error {
+            border-color: #EF4444;
+        }
+
+        /* Charging Animation Styles */
+        .battery-charging-glow {
+            animation: battery-glow 2s infinite alternate ease-in-out;
+        }
+
+        @keyframes battery-glow {
+            0% {
+                box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
+            }
+
+            100% {
+                box-shadow: 0 0 25px rgba(59, 130, 246, 0.7);
+            }
+        }
+
+        .battery-success-glow {
+            animation: battery-success 1.5s ease-out forwards;
+        }
+
+        @keyframes battery-success {
+            0% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            }
+
+            40% {
+                box-shadow: 0 0 35px rgba(34, 197, 94, 1);
+            }
+
+            100% {
+                box-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
+            }
+        }
+
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #22c55e;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        @keyframes particle-burst {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(var(--x), var(--y)) scale(0.2);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 80px;
+            }
+        }
+
+        /* Image protection & Watermark */
+        .protected-image {
+            user-select: none;
+            -webkit-user-drag: none;
+            pointer-events: none;
+        }
+
+        .watermarked-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Watermark overlay styling */
+        .watermarked-container::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url('./images/Favicon.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 18% auto;
+            opacity: 0.15;
+            /* Subdued semi-transparent watermark */
+            pointer-events: none;
+            /* Let clicks pass through */
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-primary selection:text-white">
+
+    <!-- Top trust bar -->
+    <div
+        class="fixed top-0 left-0 right-0 z-[60] bg-primary/90 backdrop-blur-sm text-white text-xs sm:text-sm py-2 text-center font-medium">
+        <span class="hidden sm:inline">🚚 Free Delivery Nationwide &nbsp;•&nbsp; </span>
+        <span>💵 Cash on Delivery — Pay Only When You Receive</span>
+    </div>
+
+    <!-- Sticky Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300 top-8 sm:top-9" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-14 sm:h-16">
+                <!-- Brand -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <a href="#" class="text-xl font-bold tracking-tight text-white">FullyCharged<span
+                            class="text-primary">.</span></a>
+                </div>
+
+                <!-- Trust & CTA -->
+                <div class="flex items-center gap-3 sm:gap-6">
+                    <div class="hidden lg:flex items-center gap-2 text-sm text-textMuted">
+                        <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Cash on Delivery
+                    </div>
+                    <span class="hidden sm:block text-sm font-bold text-accent">৳1,299</span>
+                    <a href="#checkout"
+                        class="bg-cta hover:bg-orange-600 text-white px-4 sm:px-5 py-2 rounded-full text-sm font-semibold transition-all btn-pulse min-h-[44px] flex items-center">
+                        Order Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Premium Hero Section -->
+    <section class="relative pt-36 pb-16 lg:pt-52 lg:pb-28 overflow-hidden flex items-center min-h-[90vh]">
+        <!-- Background elements -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary rounded-full blur-[150px] opacity-10 z-0">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                <!-- Text Content -->
+                <div class="text-center lg:text-left reveal">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-6 text-xs sm:text-sm text-textMuted uppercase tracking-wider font-medium">
+                        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                        প্রতি মাসে ২০,০০০+ এর বেশি মানুষ এটি ব্যবহার করছেন
+                    </div>
+
+                    <h1
+                        class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-5 leading-[1.1]">
+                        সারারাত ফোন চার্জে ফেলে রাখছেন?<br>
+                        <span class="text-gradient-blue">সাধের ব্যাটারিটা এবার বাঁচান!</span>
+                    </h1>
+
+                    <p
+                        class="text-lg sm:text-xl text-textMuted mb-6 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        এই স্মার্ট AI অ্যাডাপ্টারটি আপনার ফোন ১০০% চার্জ হওয়া মাত্র <strong
+                            class="text-white font-medium">পাওয়ার কানেকশন পুরোপুরি কেটে দেয়।</strong> ফলে সারা রাত
+                        চার্জে রাখলেও ফোন গরম হবে না এবং ব্যাটারি থাকবে একদম সুরক্ষিত।
+                    </p>
+
+                    <!-- Price anchor -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-8">
+                        <span class="text-3xl sm:text-4xl font-bold text-white">৳১,২৯৯</span>
+                        <span class="text-lg text-textMuted line-through">৳২,৫০০</span>
+                        <span
+                            class="bg-cta/20 text-cta text-sm font-bold px-3 py-1 rounded-full border border-cta/30">৪৮%
+                            ছাড়</span>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+                        <a href="#checkout"
+                            class="bg-cta text-white text-base px-8 py-4 rounded-full font-bold transition-transform hover:scale-105 hover:bg-orange-600 shadow-premium text-center flex items-center justify-center gap-2 group min-h-[52px] btn-pulse">
+                            অর্ডার করুন — ক্যাশ অন ডেলিভারি
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Trust micro-row -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-3 text-sm text-textMuted">
+                        <span class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                </path>
+                            </svg>
+                            ১ বছরের ওয়ারেন্টি
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4">
+                                </path>
+                            </svg>
+                            দেশজুড়ে ফ্রি ডেলিভারি
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-accent shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                            </svg>
+                            হাতে পেয়ে টাকা পরিশোধ
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Visual -->
+                <div class="relative reveal reveal-delay-2 flex justify-center lg:justify-end">
+                    <div
+                        class="relative w-full max-w-md lg:max-w-xl aspect-square rounded-3xl overflow-hidden glass flex items-center justify-center group">
+                        <!-- Placeholder for Product Hero Image -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-surface to-base -z-10"></div>
+                        <div class="watermarked-container">
+                            <img src="./images/Smart Auto Stop Full Charging Adapter Overcharge Protection-1.webp"
+                                alt="Fully Charged Separator KH-51(AI)"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 protected-image"
+                                onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 400 400\' fill=\'%23111\'%3E%3Crect width=\'400\' height=\'400\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23333\' font-family=\'sans-serif\' font-size=\'20\'%3EProduct Hero Image (400x400)%3C/text%3E%3C/svg%3E'">
+                        </div>
+
+                        <!-- Floating Badges -->
+                        <div
+                            class="absolute top-6 right-6 glass px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-lg">
+                            <span class="text-accent">⚡</span> 140W Max
+                        </div>
+                        <div
+                            class="absolute bottom-6 left-6 bg-cta text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                            ৪৮% ছাড় আজকেই
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust stats bar -->
+    <section class="py-8 border-y border-white/5 bg-surface/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center reveal">
+                <div>
+                    <p class="text-2xl sm:text-3xl font-bold text-white">২০,০০০+</p>
+                    <p class="text-xs sm:text-sm text-textMuted mt-1">প্রতি মাসে বিক্রি</p>
+                </div>
+                <div>
+                    <p class="text-2xl sm:text-3xl font-bold text-accent">৪.৯<span
+                            class="text-lg text-textMuted">/৫</span></p>
+                    <p class="text-xs sm:text-sm text-textMuted mt-1">কাস্টমার রেটিং</p>
+                </div>
+                <div>
+                    <p class="text-2xl sm:text-3xl font-bold text-white">১ বছর</p>
+                    <p class="text-xs sm:text-sm text-textMuted mt-1">ফুল ওয়ারেন্টি</p>
+                </div>
+                <div>
+                    <p class="text-2xl sm:text-3xl font-bold text-primary">140W</p>
+                    <p class="text-xs sm:text-sm text-textMuted mt-1">সুপার ফাস্ট চার্জিং</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Problem Awareness Section -->
+    <section class="py-24 bg-surface relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 leading-snug">প্রতি রাতে আপনার সাধের ফোনটি কিন্তু নীরবেই
+                    নষ্ট হয়ে যাচ্ছে!</h2>
+                <p class="text-textMuted text-lg">১০০% চার্জ হওয়ার পরও সারা রাত ফোন প্লাগড-ইন করে রাখলে ভেতরে ভেতরে
+                    চার্জ হতেই থাকে। এই অতিরিক্ত চার্জিংয়ের কারণে ফোন গরম হয় এবং আস্তে আস্তে ব্যাটারির লাইফ স্থায়ীভাবে
+                    নষ্ট হয়ে যায়।</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pain Point 1 -->
+                <div class="glass p-8 rounded-2xl reveal reveal-delay-1">
+                    <div class="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">ফোন অতিরিক্ত গরম হওয়া</h3>
+                    <p class="text-textMuted text-sm leading-relaxed">সব সময় পাওয়ার ইনপুট হতে থাকলে ফোন গরম হয়ে যায়, যা
+                        ফোনের ব্যাটারির সবচেয়ে বড় শত্রু এবং যেকোনো দুর্ঘটনার কারণ হতে পারে।</p>
+                </div>
+
+                <!-- Pain Point 2 -->
+                <div class="glass p-8 rounded-2xl reveal reveal-delay-2">
+                    <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">দ্রুত চার্জ শেষ হয়ে যাওয়া</h3>
+                    <p class="text-textMuted text-sm leading-relaxed">খেয়াল করেছেন কিছুদিন ব্যবহারের পরই ফোনের চার্জ কেন
+                        দ্রুত শেষ হয়? সারা রাত অতিরিক্ত চার্জ দেওয়ার কারণেই ব্যাটারির ধারণক্ষমতা কমে যায়।</p>
+                </div>
+
+                <!-- Pain Point 3 -->
+                <div class="glass p-8 rounded-2xl reveal reveal-delay-3">
+                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">হাজার হাজার টাকা খরচ</h3>
+                    <p class="text-textMuted text-sm leading-relaxed">একটি ভালো ফোনের ব্যাটারি পরিবর্তন করতে ৫ থেকে ১০
+                        হাজার টাকা পর্যন্ত খরচ হতে পারে। তাই ব্যাটারি নষ্ট হওয়ার আগেই ফোনটিকে সুরক্ষিত রাখুন।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Solution / Education Bridge Section -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 relative reveal">
+                    <!-- Interactive Charging Mock Animation -->
+                    <div
+                        class="relative w-full max-w-sm mx-auto bg-slate-900/60 backdrop-blur-md rounded-3xl p-8 border border-white/10 shadow-2xl flex flex-col items-center justify-center overflow-hidden min-h-[440px]">
+                        <!-- Particles Container -->
+                        <div class="absolute inset-0 pointer-events-none" id="particles-container"></div>
+
+                        <!-- Phone Frame -->
+                        <div class="relative w-56 h-[330px] bg-slate-950 rounded-[44px] border-[6px] border-slate-800 shadow-2xl flex flex-col items-center justify-between p-6 overflow-hidden transition-all duration-500"
+                            id="phone-container">
+                            <!-- Dynamic Glow Overlay -->
+                            <div class="absolute inset-0 bg-green-500/0 transition-all duration-1000 pointer-events-none"
+                                id="success-glow-overlay"></div>
+
+                            <!-- Notch -->
+                            <div class="w-20 h-4 bg-slate-800 rounded-full mb-2 z-10 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 bg-slate-900 rounded-full border border-slate-800/80"></div>
+                            </div>
+
+                            <!-- Screen Content -->
+                            <div class="flex-1 w-full flex flex-col items-center justify-center gap-4 z-10">
+                                <!-- Battery Outer Frame -->
+                                <div class="relative w-20 h-36 border-[3px] border-slate-700 rounded-2xl p-1 flex flex-col-reverse items-center justify-start overflow-hidden transition-all duration-500"
+                                    id="battery-outer">
+                                    <!-- Battery Cap -->
+                                    <div
+                                        class="absolute -top-[5px] left-1/2 -translate-x-1/2 w-8 h-[5px] bg-slate-700 rounded-t-sm">
+                                    </div>
+
+                                    <!-- Battery Fill level -->
+                                    <div class="w-full bg-blue-500 rounded-lg transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.5)]"
+                                        id="battery-fill" style="height: 0%;"></div>
+
+                                    <!-- Lightning Icon Container -->
+                                    <div class="absolute inset-0 flex items-center justify-center"
+                                        id="status-icon-container">
+                                        <!-- Lightning SVG -->
+                                        <svg class="w-10 h-10 text-white drop-shadow-[0_2px_5px_rgba(0,0,0,0.5)] transition-all duration-500 transform scale-100"
+                                            id="status-icon-charging" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                        </svg>
+                                        <!-- Checkmark SVG (hidden initially) -->
+                                        <svg class="w-10 h-10 text-green-400 drop-shadow-[0_2px_5px_rgba(0,0,0,0.5)] transition-all duration-500 transform scale-0 absolute"
+                                            id="status-icon-complete" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- Percentage counter -->
+                                <div class="text-3xl font-extrabold text-white tracking-wider font-mono transition-colors duration-500"
+                                    id="percentage-text">0%</div>
+
+                                <!-- Status info label -->
+                                <div class="text-[10px] uppercase tracking-widest text-slate-500 font-bold h-4 text-center"
+                                    id="status-label">কানেক্ট করা হচ্ছে...</div>
+                            </div>
+
+                            <!-- Home indicator bar -->
+                            <div class="w-20 h-1 bg-slate-800 rounded-full mt-2 z-10"></div>
+                        </div>
+
+                        <!-- USB-C Cable Connector -->
+                        <div class="absolute bottom-0 w-8 flex flex-col items-center transition-all duration-700 ease-out translate-y-16"
+                            id="charging-cable">
+                            <!-- Metal Tip -->
+                            <div
+                                class="w-5 h-6 bg-slate-400 rounded-t-sm border-b border-slate-500 flex items-center justify-center">
+                                <div class="w-3.5 h-1 bg-slate-600 rounded-full"></div>
+                            </div>
+                            <!-- Plug Body -->
+                            <div
+                                class="w-8 h-8 bg-slate-700 rounded-b-md border-t border-slate-600 flex items-center justify-center shadow-lg">
+                                <!-- Cable LED indicator -->
+                                <div class="w-1.5 h-1.5 rounded-full bg-slate-600 transition-colors duration-300"
+                                    id="cable-led"></div>
+                            </div>
+                            <!-- Cable Cord -->
+                            <div class="w-3 h-16 bg-slate-800"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2 reveal">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-6">ফোনের ভেতরের অটো-কাটঅফ ফিচারটি কেন যথেষ্ট নয়?</h2>
+                    <p class="text-textMuted text-lg mb-6 leading-relaxed">
+                        স্মার্টফোনে "অপ্টিমাইজড চার্জিং" বলা হলেও ১০০% হওয়ার পর সেটি খুব ধীর গতিতে চার্জ নিতেই থাকে। এর
+                        ফলে ব্যাটারি সবসময় সচল থাকে এবং ভেতরে ভেতরে হিট জেনারেট করে।
+                    </p>
+                    <p class="text-textMuted text-lg mb-8 leading-relaxed">
+                        আর ঠিক এই জায়গাতেই কাজ করে KH-51(AI)। এর স্মার্ট আইসি চিপ চার্জ ফুল হওয়া মাত্র লাইন একদম
+                        ডিসকানেক্ট করে দেয়। কোনো ট্রিকল চার্জ হয় না, ফোনও গরম হয় না। ব্যাটারি থাকে শতভাগ নিরাপদ।
+                    </p>
+                    <a href="#checkout"
+                        class="inline-flex items-center gap-2 bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-colors">
+                        ফোনকে সুরক্ষিত রাখুন এখনই
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Features/Benefits Showcase -->
+    <section class="py-24 bg-surface border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">নিখুঁত প্রযুক্তি ও প্রিমিয়াম ডিজাইন</h2>
+                <p class="text-textMuted text-lg max-w-2xl mx-auto">উন্নত মানের হার্ডওয়্যার এবং স্মার্ট সফটওয়্যারের সেরা
+                    কম্বিনেশন।</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div
+                    class="glass p-6 rounded-2xl reveal reveal-delay-1 border border-white/5 hover:border-primary/50 transition-colors group">
+                    <div
+                        class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition-transform">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold mb-2">140W সুপার ফাস্ট</h4>
+                    <p class="text-sm text-textMuted">এক সাথে ল্যাপটপ, ট্যাবলেট বা স্মার্টফোনের মতো হাই-পাওয়ার
+                        ডিভাইসগুলো সর্বোচ্চ স্পিডে চার্জ করা সম্ভব।</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div
+                    class="glass p-6 rounded-2xl reveal reveal-delay-2 border border-white/5 hover:border-primary/50 transition-colors group">
+                    <div
+                        class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition-transform">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold mb-2">স্মার্ট এআই ডিটেকশন</h4>
+                    <p class="text-sm text-textMuted">এর স্মার্ট আইসি চিপ কানেক্ট করা ডিভাইস অনুযায়ী প্রয়োজনীয় ভোল্টেজ
+                        নিজে থেকেই ঠিক করে নেয়।</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div
+                    class="glass p-6 rounded-2xl reveal reveal-delay-3 border border-white/5 hover:border-primary/50 transition-colors group">
+                    <div
+                        class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition-transform">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
+                            </path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold mb-2">পোর্টেবল ও ট্রাভেল ফ্রেন্ডলি</h4>
+                    <p class="text-sm text-textMuted">মাত্র ৪.৫ সেমি সাইজের এই কমপ্যাক্ট অ্যাডাপ্টারটি যেকোনো জায়গায় খুব
+                        সহজে বহন করা যায়।</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div
+                    class="glass p-6 rounded-2xl reveal reveal-delay-4 border border-white/5 hover:border-primary/50 transition-colors group">
+                    <div
+                        class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition-transform">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold mb-2">সার্টিফাইড নিরাপত্তা</h4>
+                    <p class="text-sm text-textMuted">উচ্চমানের এবং আগুন প্রতিরোধী ফায়ার-প্রুফ প্লাস্টিক দিয়ে তৈরি, যা
+                        সম্পূর্ণ সার্টিফাইড।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Product Image Gallery -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 tracking-tight">
+                    <span class="text-gradient-blue">প্রিমিয়াম ডিজাইন</span> ও আধুনিক প্রযুক্তি
+                </h2>
+                <p class="text-textMuted text-lg max-w-2xl mx-auto">আপনার ফোনের দীর্ঘস্থায়ী সুরক্ষার কথা মাথায় রেখে এর
+                    প্রতিটি পার্টস নিখুঁতভাবে তৈরি করা হয়েছে।</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
+                    <!-- Gallery Item 1 -->
+                    <div
+                        class="rounded-3xl overflow-hidden glass aspect-video relative group border border-white/5 hover:border-white/10 transition-all duration-300">
+                        <div class="watermarked-container">
+                            <img src="./images/Smart Auto Stop Full Charging Adapter Overcharge Protection-2.webp"
+                                alt="Auto-Cutoff Protection"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 protected-image"
+                                onerror="this.style.background='#1E293B'">
+                        </div>
+                        <div
+                            class="absolute top-5 left-5 z-10 bg-slate-950/45 backdrop-blur-md border border-white/10 pl-3 pr-5 py-2.5 rounded-2xl shadow-xl flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-accent shadow-[0_0_8px_#06b6d4]"></div>
+                            <div class="flex flex-col text-left">
+                                <span
+                                    class="text-[9px] uppercase tracking-widest text-accent font-bold leading-none mb-1">নিরাপত্তা</span>
+                                <span
+                                    class="text-xs sm:text-sm font-semibold text-white tracking-wide leading-none">স্মার্ট
+                                    অটো কাট-অফ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 2 -->
+                    <div
+                        class="rounded-3xl overflow-hidden glass aspect-video relative group border border-white/5 hover:border-white/10 transition-all duration-300">
+                        <div class="watermarked-container">
+                            <img src="./images/Smart Auto Stop Full Charging Adapter Overcharge Protection-3.webp"
+                                alt="Overheating Prevention"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 protected-image"
+                                onerror="this.style.background='#1E293B'">
+                        </div>
+                        <div
+                            class="absolute top-5 left-5 z-10 bg-slate-950/45 backdrop-blur-md border border-white/10 pl-3 pr-5 py-2.5 rounded-2xl shadow-xl flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-red-500 shadow-[0_0_8px_#ef4444]"></div>
+                            <div class="flex flex-col text-left">
+                                <span
+                                    class="text-[9px] uppercase tracking-widest text-red-400 font-bold leading-none mb-1">তাপমাত্রা
+                                    নিয়ন্ত্রণ</span>
+                                <span
+                                    class="text-xs sm:text-sm font-semibold text-white tracking-wide leading-none">ওভারহিট
+                                    ও ফায়ার প্রোটেকশন</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 3 -->
+                    <div
+                        class="rounded-3xl overflow-hidden glass aspect-video relative group border border-white/5 hover:border-white/10 transition-all duration-300">
+                        <div class="watermarked-container">
+                            <img src="./images/Smart Auto Stop Full Charging Adapter Overcharge Protection-4.webp"
+                                alt="Universal Compatibility"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 protected-image"
+                                onerror="this.style.background='#1E293B'">
+                        </div>
+                        <div
+                            class="absolute top-5 left-5 z-10 bg-slate-950/45 backdrop-blur-md border border-white/10 pl-3 pr-5 py-2.5 rounded-2xl shadow-xl flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_#2563eb]"></div>
+                            <div class="flex flex-col text-left">
+                                <span
+                                    class="text-[9px] uppercase tracking-widest text-primary font-bold leading-none mb-1">স্মার্ট
+                                    আইসি</span>
+                                <span class="text-xs sm:text-sm font-semibold text-white tracking-wide leading-none">সব
+                                    ডিভাইসে সাপোর্ট</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 4 -->
+                    <div
+                        class="rounded-3xl overflow-hidden glass aspect-video relative group border border-white/5 hover:border-white/10 transition-all duration-300">
+                        <div class="watermarked-container">
+                            <img src="./images/Smart Auto Stop Full Charging Adapter Overcharge Protection-5.webp"
+                                alt="Premium Build"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 protected-image"
+                                onerror="this.style.background='#1E293B'">
+                        </div>
+                        <div
+                            class="absolute top-5 left-5 z-10 bg-slate-950/45 backdrop-blur-md border border-white/10 pl-3 pr-5 py-2.5 rounded-2xl shadow-xl flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_#22c55e]"></div>
+                            <div class="flex flex-col text-left">
+                                <span
+                                    class="text-[9px] uppercase tracking-widest text-green-400 font-bold leading-none mb-1">বিল্ড
+                                    কোয়ালিটি</span>
+                                <span
+                                    class="text-xs sm:text-sm font-semibold text-white tracking-wide leading-none">প্রিমিয়াম
+                                    ও মজবুত ডিজাইন</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- 6. Social Proof / Reviews -->
+    <section class="py-24 bg-surface border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">যাঁরা ব্যবহার করছেন তাঁদের মতামত</h2>
+                <div class="flex items-center justify-center gap-1 text-accent mb-2">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                        </path>
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                        </path>
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                        </path>
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                        </path>
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                        </path>
+                    </svg>
+                </div>
+                <p class="text-textMuted text-sm">বাংলাদেশে আমাদের ১,৫০০+ ভেরিফাইড কাস্টমারদের রিভিউ।</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="glass p-8 rounded-2xl reveal reveal-delay-1 relative">
+                    <div class="flex items-center gap-1 text-accent mb-3">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                            </path>
+                        </svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                            </path>
+                        </svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                            </path>
+                        </svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                            </path>
+                        </svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                            </path>
+                        </svg>
+                    </div>
+                    <p class="text-textMuted mb-6 italic leading-relaxed">"সারা রাত চার্জে দিয়ে রাখার কারণে আমার আগের
+                        ফোনটার ব্যাটারি ফুলে নষ্ট হয়ে গেছিল। নতুন গ্যালাক্সি S23 নেওয়ার পর এটা কিনেছি। এখন আর কোনো টেনশন
+                        ছাড়াই রাতে ঘুমাতে পারি। ১০০% চার্জ হওয়া মাত্রই পাওয়ার কানেকশন পুরো বন্ধ করে দেয়।"</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-sm font-bold">
+                            R</div>
+                        <div>
+                            <h5 class="font-semibold text-sm flex items-center gap-2">রফিক এম. <span
+                                    class="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full font-medium">ভেরিফাইড</span>
+                            </h5>
+                            <p class="text-xs text-textMuted">ঢাকা</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="glass p-8 rounded-2xl reveal reveal-delay-2 relative border border-primary/20">
+                    <div class="flex items-center gap-1 text-accent mb-3">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                            </path>
+                        </svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                            </path>
+                        </svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                            </path>
+                        </svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                            </path>
+                        </svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                            </path>
+                        </svg>
+                    </div>
+                    <p class="text-textMuted mb-6 italic leading-relaxed">"বিল্ড কোয়ালিটি দেখে মন ভরে গেছে, ঠিক যেন
+                        অ্যাপেলের কোনো অরিজিনাল প্রোডাক্ট। আমি এটা দিয়ে আমার ম্যাকবুক আর আইফোন দুটাই চার্জ করি। 140W
+                        স্পিড সত্যিই পাওয়া যায়, আর অটো-ডিসকানেক্ট ফিচারটা একদম নিখুঁত কাজ করে।"</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center text-sm font-bold">
+                            S</div>
+                        <div>
+                            <h5 class="font-semibold text-sm flex items-center gap-2">সালমান কে. <span
+                                    class="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full font-medium">ভেরিফাইড</span>
+                            </h5>
+                            <p class="text-xs text-textMuted">সিলেট</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div class="glass p-8 rounded-2xl reveal reveal-delay-3 relative">
+                    <div class="flex items-center gap-1 text-accent mb-3">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                            </path>
+                        </svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                            </path>
+                        </svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                            </path>
+                        </svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                            </path>
+                        </svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                            </path>
+                        </svg>
+                    </div>
+                    <p class="text-textMuted mb-6 italic leading-relaxed">"ক্যাশ অন ডেলিভারিতে অর্ডার করেছিলাম, খুব
+                        দ্রুতই হাতে পেয়েছি। প্রোডাক্টটা হাতে নিলেই বোঝা যায় যে বেশ প্রিমিয়াম এবং টেকসই জিনিস। ৮০ হাজার
+                        টাকার ফোন নিরাপদে রাখার জন্য এই সামান্য টাকা খরচ করাটা একদম সেরা একটা সিদ্ধান্ত ছিল।"</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-sm font-bold">
+                            T</div>
+                        <div>
+                            <h5 class="font-semibold text-sm flex items-center gap-2">তানভীর এইচ. <span
+                                    class="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full font-medium">ভেরিফাইড</span>
+                            </h5>
+                            <p class="text-xs text-textMuted">চট্টগ্রাম</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Pricing & Order Section -->
+    <section id="checkout" class="py-24 relative scroll-mt-28">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass rounded-3xl p-8 md:p-12 relative overflow-hidden reveal">
+                <!-- Highlight accent -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full blur-[100px] opacity-20 -z-10">
+                </div>
+
+                <div class="text-center mb-8">
+                    <div
+                        class="inline-flex items-center gap-2 bg-cta/10 border border-cta/30 text-cta text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+                        <span class="w-2 h-2 rounded-full bg-cta animate-pulse"></span>
+                        সীমিত স্টক — ফ্রি ডেলিভারি পেতে আজই অর্ডার করুন
+                    </div>
+                    <h2 class="text-3xl font-bold mb-3">আজই আপনার সাধের ফোনটিকে সুরক্ষিত করুন</h2>
+                    <p class="text-textMuted">আগে কোনো টাকা দিতে হবে না। ডেলিভারি ম্যানের কাছ থেকে প্রোডাক্ট বুঝে পেয়ে
+                        তারপর টাকা দিন।
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <!-- Option 1: Single -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="radio" name="package" value="single" data-price="1299" data-label="Single Unit"
+                            class="peer sr-only">
+                        <div
+                            class="rounded-2xl border-2 border-white/10 p-6 transition-all peer-checked:border-primary peer-checked:bg-primary/5 hover:border-white/30 h-full">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="text-lg font-semibold">১ পিস অ্যাডাপ্টার</h3>
+                                    <p class="text-sm text-textMuted">একটি ডিভাইসের জন্য পারফেক্ট</p>
+                                </div>
+                                <div
+                                    class="w-5 h-5 rounded-full border-2 border-white/30 flex items-center justify-center package-radio transition-all peer-checked:border-primary">
+                                    <div
+                                        class="inner-dot w-2.5 h-2.5 rounded-full bg-primary scale-0 transition-transform">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-end gap-2">
+                                <span class="text-3xl font-bold">৳১,২৯৯</span>
+                                <span class="text-sm text-textMuted line-through mb-1">৳২,৫০০</span>
+                            </div>
+                        </div>
+                    </label>
+
+                    <!-- Option 2: Bundle (pre-selected for higher AOV) -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="radio" name="package" value="double" data-price="2099" data-label="Double Pack"
+                            class="peer sr-only" checked>
+                        <div
+                            class="absolute -top-3 left-1/2 -translate-x-1/2 bg-cta text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-lg">
+                            সবচেয়ে জনপ্রিয় — ৪৯৯ টাকা সাশ্রয়
+                        </div>
+                        <div
+                            class="rounded-2xl border-2 border-white/10 p-6 transition-all peer-checked:border-primary peer-checked:bg-primary/5 hover:border-white/30 h-full">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="text-lg font-semibold">২ পিসের স্পেশাল বান্ডেল</h3>
+                                    <p class="text-sm text-textMuted">ফোন + ল্যাপটপের জন্য বেস্ট</p>
+                                </div>
+                                <div
+                                    class="w-5 h-5 rounded-full border-2 border-white/30 flex items-center justify-center package-radio transition-all peer-checked:border-primary">
+                                    <div
+                                        class="inner-dot w-2.5 h-2.5 rounded-full bg-primary scale-0 transition-transform">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-end gap-2">
+                                <span class="text-3xl font-bold">৳২,০৯৯</span>
+                                <span class="text-sm text-textMuted line-through mb-1">৳৫,০০০</span>
+                            </div>
+                            <p class="text-xs text-green-400 mt-2 font-medium">সেরা ডিল — প্রতিটি মাত্র ১,০৪৯ টাকায়</p>
+                        </div>
+                    </label>
+                </div>
+
+                <!-- COD Order Form -->
+                <form id="order-form" class="space-y-4 mb-8" novalidate>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="customer-name" class="block text-sm font-medium text-textMuted mb-1.5">আপনার
+                                সম্পূর্ণ নাম *</label>
+                            <input type="text" id="customer-name" name="name" required placeholder="নাম লিখুন"
+                                class="form-input w-full rounded-xl px-4 py-3 text-white placeholder:text-textMuted/60">
+                        </div>
+                        <div>
+                            <label for="customer-phone" class="block text-sm font-medium text-textMuted mb-1.5">মোবাইল
+                                নাম্বার *</label>
+                            <input type="tel" id="customer-phone" name="phone" required placeholder="01XXXXXXXXX"
+                                pattern="01[0-9]{9}"
+                                class="form-input w-full rounded-xl px-4 py-3 text-white placeholder:text-textMuted/60">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="customer-address" class="block text-sm font-medium text-textMuted mb-1.5">ডেলিভারি
+                            পাওয়ার সম্পূর্ণ ঠিকানা *</label>
+                        <textarea id="customer-address" name="address" required rows="3"
+                            placeholder="বাসা নাম্বার, রোড নাম্বার, এলাকা এবং জেলার নাম লিখুন"
+                            class="form-input w-full rounded-xl px-4 py-3 text-white placeholder:text-textMuted/60 resize-none"></textarea>
+                    </div>
+                    <p id="form-error" class="hidden text-red-400 text-sm"></p>
+                </form>
+
+                <!-- Trust Signals & CTA -->
+                <div class="flex flex-col items-center">
+                    <button type="submit" form="order-form" id="order-btn"
+                        class="w-full bg-cta text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-orange-600 transition-colors shadow-glow mb-2 min-h-[56px] btn-pulse">
+                        অর্ডার নিশ্চিত করুন (ক্যাশ অন ডেলিভারি)
+                    </button>
+                    <p class="text-xs text-textMuted mb-6 text-center">এখন কোনো টাকা দেওয়া লাগবে না। প্রোডাক্ট হাতে পেয়ে
+                        চেক করে তারপর ডেলিভারি ম্যানকে টাকা দেবেন।</p>
+
+                    <div class="flex flex-wrap justify-center gap-6 text-sm text-textMuted">
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                </path>
+                            </svg>
+                            ৩০ দিনের ওয়ারেন্টি
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4">
+                                </path>
+                            </svg>
+                            সারাদেশে ফ্রি ডেলিভারি
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                            </svg>
+                            হাতে পেয়ে টাকা পরিশোধ
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FAQ Section -->
+    <section class="py-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-10 text-center reveal">সাধারণ কিছু প্রশ্ন ও উত্তর (FAQ)</h2>
+
+            <div class="space-y-4 reveal">
+                <!-- FAQ 1 -->
+                <div class="border border-white/10 rounded-2xl overflow-hidden glass">
+                    <button
+                        class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center font-medium focus:outline-none">
+                        ফোনে তো অটো-কাটঅফ অপশন আছেই, তাহলে এটার কি দরকার?
+                        <svg class="w-5 h-5 transform transition-transform duration-300" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content bg-white/5">
+                        <div class="px-6 pb-4 text-textMuted text-sm leading-relaxed">
+                            ফোনের নিজস্ব সফটওয়্যার ফুল চার্জ হওয়ার পর চার্জের স্পিড কমিয়ে দেয় ঠিকই, কিন্তু একদম বন্ধ করে
+                            না। ফলে ফোনটি সারারাত ১০০% চার্জে থেকে গরম হতে থাকে এবং ব্যাটারির লাইফ কমিয়ে দেয়। এই
+                            অ্যাডাপ্টারটি ফুল চার্জ হওয়া মাত্র বিদ্যুৎ সংযোগ সম্পূর্ণ বিচ্ছিন্ন করে দেয়।
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="border border-white/10 rounded-2xl overflow-hidden glass">
+                    <button
+                        class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center font-medium focus:outline-none">
+                        আমার ফোনের সাথে কি এটি কাজ করবে?
+                        <svg class="w-5 h-5 transform transition-transform duration-300" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content bg-white/5">
+                        <div class="px-6 pb-4 text-textMuted text-sm leading-relaxed">
+                            হ্যাঁ, অবশ্যই। এর স্মার্ট চিপ যেকোনো ইউএসবি-সি (USB-C) ডিভাইসের সাথে কাজ করে। এটি স্যামসাং,
+                            শাওমি, আইফোন ১৫+, রিয়েলমি, অপো সহ সব ধরনের স্মার্টফোন, ট্যাবলেট এবং ল্যাপটপে নিরাপদে
+                            ব্যবহার করতে পারবেন।
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="border border-white/10 rounded-2xl overflow-hidden glass">
+                    <button
+                        class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center font-medium focus:outline-none">
+                        ক্যাশ অন ডেলিভারিতে কিভাবে অর্ডার করবো?
+                        <svg class="w-5 h-5 transform transition-transform duration-300" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content bg-white/5">
+                        <div class="px-6 pb-4 text-textMuted text-sm leading-relaxed">
+                            এটি সম্পূর্ণ নিরাপদ। অনলাইনে ফর্ম পূরণ করে কোনো অগ্রিম টাকা ছাড়াই অর্ডার করুন। আমরা
+                            সারাদেশের যেকোনো ঠিকানায় প্রোডাক্ট পাঠিয়ে দেবো। ডেলিভারি ম্যানের কাছ থেকে প্রোডাক্ট বুঝে
+                            পেয়ে তারপর টাকা পরিশোধ করবেন।
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-12 text-center bg-base pb-24 md:pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-xl font-bold mb-4">FullyCharged<span class="text-primary">.</span></h3>
+            <p class="text-textMuted text-sm mb-6">প্রিমিয়াম কোয়ালিটির ডিভাইস প্রোটেকশন।</p>
+            <div class="flex justify-center gap-6 text-sm text-textMuted mb-8">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-white transition-colors">Return Policy</a>
+            </div>
+            <p class="text-xs text-textMuted/50">&copy; 2026 FullyCharged by Dremoy.com All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile sticky CTA bar -->
+    <div id="mobile-cta"
+        class="mobile-cta-bar fixed bottom-0 left-0 right-0 z-50 md:hidden bg-base/95 backdrop-blur-lg border-t border-white/10 px-4 py-3 safe-area-pb">
+        <div class="flex items-center gap-3">
+            <div class="flex-1 min-w-0">
+                <p class="text-xs text-textMuted truncate">KH-51(AI) — ক্যাশ অন ডেলিভারি</p>
+                <p class="text-lg font-bold text-white" id="mobile-price">৳২,০৯৯</p>
+            </div>
+            <a href="#checkout"
+                class="bg-cta hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold text-sm shrink-0 min-h-[44px] flex items-center btn-pulse">
+                অর্ডার করুন
+            </a>
+        </div>
+    </div>
+
+    <!-- Order success modal -->
+    <div id="success-modal"
+        class="fixed inset-0 z-[70] hidden items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+        <div class="glass rounded-2xl p-8 max-w-md w-full text-center">
+            <div class="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">অর্ডারটি সফল হয়েছে!</h3>
+            <p class="text-textMuted text-sm mb-4">আমাদের প্রতিনিধি খুব দ্রুতই আপনার নাম্বারে কল করে অর্ডারটি কনফার্ম
+                করবেন। প্রোডাক্ট হাতে পেয়ে চেক করে তারপর টাকা পরিশোধ করুন।</p>
+
+            <!-- Customer Support Options inside Modal -->
+            <div class="border-t border-white/10 pt-4 mt-2 mb-6 flex flex-col gap-2.5 text-left">
+                <p class="text-xs text-textMuted font-semibold text-center mb-1">যেকোনো প্রয়োজনে সরাসরি আমাদের সাথে
+                    যোগাযোগ করতে পারেন:</p>
+                <a href="tel:+8801622536026"
+                    class="flex items-center gap-3 bg-white/5 hover:bg-white/10 px-4 py-2.5 rounded-xl border border-white/10 text-sm transition-colors">
+                    <span class="text-lg">📞</span>
+                    <div class="flex flex-col">
+                        <span class="text-[10px] text-textMuted uppercase font-bold leading-none">কল করুন (সকাল ১০টা -
+                            রাত ১০টা)</span>
+                        <span class="font-semibold text-white mt-1">+8801622536026</span>
+                    </div>
+                </a>
+                <a href="https://wa.me/8801622536026?text=%E0%A6%86%E0%A6%B8%E0%A6%B8%E0%A6%BE%E0%A6%B2%E0%A6%BE%E0%A6%AE%E0%A7%81%20%E0%A6%86%E0%A6%B2%E0%A6%BE%E0%A6%87%E0%A6%95%E0%A7%81%E0%A6%AE%E0%A5%A4%20%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%8F%E0%A6%95%E0%A6%9F%E0%A6%BF%20%E0%A6%85%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0%20%E0%A6%95%E0%A6%B0%E0%A6%9B%E0%A6%BF%E0%A5%A4%20%E0%A6%85%E0%A6%A8%E0%A7%81%E0%A6%97%E0%A7%8D%E0%A6%B0%E0%A6%B9%20%E0%A6%95%E0%A6%B0%E0%A7%87%20%E0%A6%85%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0%E0%A6%9F%E0%A6%BF%20%E0%A6%95%E0%A6%A8%E0%A6%AB%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%AE%20%E0%A6%95%E0%A6%B0%E0%A7%81%E0%A6%A8%E0%A5%A4" target="_blank"
+                    class="flex items-center gap-3 bg-green-500/10 hover:bg-green-500/20 px-4 py-2.5 rounded-xl border border-green-500/20 text-sm transition-colors text-green-400">
+                    <!-- Official SVG WhatsApp Logo -->
+                    <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.725 1.451 5.405.002 9.813-4.388 9.816-9.794.002-2.617-1.012-5.078-2.859-6.927C16.486 2.035 14.04 1.02 11.43 1.02 6.027 1.02 1.62 5.41 1.616 10.817c-.001 1.616.46 3.223 1.332 4.678L1.93 20.08l4.717-1.254zm13.388-7.75c-.328-.164-1.94-.957-2.24-1.066-.3-.11-.518-.164-.736.164-.218.327-.844 1.066-1.034 1.284-.19.218-.38.245-.707.081-.327-.164-1.382-.509-2.632-1.622-.973-.867-1.63-1.94-1.82-2.267-.19-.327-.02-.504.143-.668.147-.148.328-.381.492-.572.164-.19.218-.328.327-.546.11-.218.055-.409-.027-.572-.082-.164-.736-1.772-1.008-2.427-.265-.638-.53-.55-.736-.56-.19-.01-.409-.01-.627-.01-.218 0-.572.082-.872.409-.3.327-1.144 1.118-1.144 2.727 0 1.61 1.172 3.163 1.335 3.381.164.218 2.307 3.522 5.59 4.943.78.337 1.39.539 1.86.688.784.249 1.497.214 2.062.13.629-.094 1.94-.793 2.213-1.558.272-.764.272-1.418.19-1.557-.083-.14-.305-.22-.633-.383z"/>
+                    </svg>
+                    <div class="flex flex-col text-left">
+                        <span class="text-[10px] text-green-400/80 uppercase font-bold leading-none">হোয়াটসঅ্যাপ মেসেজ</span>
+                        <span class="font-semibold text-green-300 mt-1">হোয়াটসঅ্যাপ-এ মেসেজ দিন</span>
+                    </div>
+                </a>
+            </div>
+
+            <button type="button" id="close-modal"
+                class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold w-full">ঠিক
+                আছে</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./script.js"></script>
+</body>
+
+</html>
